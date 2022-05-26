@@ -1,0 +1,9 @@
+<h1>Restaurant's details</h1>
+
+<% simple_form_for [@restaurant, @review] do |f| %>
+  <% f.input :name %>
+  <% f.submit "Create" %>
+<% end %>
+  
+
+<%= link_to "Back", restaurants_path, class: "card-link" %>

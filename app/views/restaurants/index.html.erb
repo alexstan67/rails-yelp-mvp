@@ -1,0 +1,20 @@
+<h1>List of Restaurants</h1>
+
+<% @restaurants.each do |r| %>
+<div class="card m-5" style="width: 18rem;">
+  <img src="https://media-cdn.tripadvisor.com/media/photo-s/1a/f6/04/87/image-restaurant.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= r.name %></h5>
+    <p class="card-text">Some text</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><%= r.address %></li>
+    <li class="list-group-item"><%= r.phone_number %></li>
+    <li class="list-group-item"><%= r.category %></li>
+  </ul>
+  <div class="card-body">
+    <%= link_to "View", resto_show_path(r.id), class: "card-link" %>
+    <a href="#" class="card-link">Delete</a>
+  </div>
+</div>
+<% end %>
